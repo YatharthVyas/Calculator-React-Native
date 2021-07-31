@@ -14,15 +14,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#CFCFCF',
     fontSize: 20,
-    paddingBottom: 10,
-    paddingTop: 10,
+    paddingBottom: 5,
+    paddingTop: 15,
     paddingLeft: 20,
     borderBottomColor: '#333',
     borderBottomWidth: 1,
     marginBottom: 15,
   },
   headText: {
-  	fontSize: 40,
-    fontFamily: 'Courier New',
+  	fontSize: 45,
+    fontFamily: 'Arial',
   }
 });
