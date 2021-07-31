@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 // Topbar
 import Topbar from '../components/Topbar/Topbar';
 import InputDisplay from '../components/InputDisplay/InputDisplay';
+import KeypadView from '../components/Keypad/Keypad';
 // Context
 import EquationContextProvider from '../context/EquationContext'
 
@@ -13,8 +14,11 @@ export default function CalculatorView () {
 				<View style={styles.topbar}>
 					<Topbar title={'Calculator'}/>
 				</View>
-				<View style={styles.topbar}>
+				<View style={styles.inputDisplay}>
 					<InputDisplay />
+				</View>
+				<View style={styles.keypad}>
+					<KeypadView />
 				</View>
 			</View>
 		</EquationContextProvider>
@@ -23,9 +27,17 @@ export default function CalculatorView () {
 
 const styles = StyleSheet.create({
   container: {
+  	flex: 1,
     flexDirection: 'column',
+    justifyContent: 'space-around'
   },
   topbar: {
   	flexGrow: 1
+  },
+  inputDisplay: {
+  	flexGrow: 2
+  },
+  keypad: {
+  	flexGrow: 4
   }
 });
