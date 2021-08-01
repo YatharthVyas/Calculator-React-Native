@@ -6,7 +6,12 @@ import {EquationContext} from '../../context/EquationContext';
 export default function NumberButton(props) {
 	const {equation, setEquation} = useContext(EquationContext);
 	const onNumberClickHander = () =>{
-		setEquation(equation + props.number)
+		if (equation==='Invalid Equation'){
+			setEquation(props.number);
+		}
+		else{
+			setEquation(equation + props.number);
+		}
 	}
 
 	return (
