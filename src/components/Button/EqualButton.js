@@ -7,13 +7,16 @@ export default function EqualButton(props) {
 	const {equation, setEquation} = useContext(EquationContext);
 	const onNumberClickHander = () =>{
 		try{
+			// Check if the equation is valid. Refer: https://regexr.com/62tsp
+			if (!/^([+\-]{0,1}([0-9\.]|(Infinity))+((e\^)[+\-]{0,1}){0,1}[0-9\.]*[+\-/*]{0,1})+$/g.test(equation)){
+				throw Error;
+			}
 
 			/* The below method executes an anonymous function whose body contains the equation.
 			*  This method is safer as compared to eval because of `use strict`
 			*/
 			const result = Function(`'use strict'; return (${equation})`)();
 			if (isNaN(result)){
-				console.log(1);
 				throw Error;
 			}
 			else{
@@ -22,6 +25,7 @@ export default function EqualButton(props) {
 		}
 		catch(error){
 			// display toast
+			setEquation('Invalid Equation')
 		}
 	}
 
