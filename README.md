@@ -55,7 +55,7 @@ const onNumberClickHander = () =>{
 
 ## Edge Cases
 
-- <b>Really Huge Nummbers:</b> They are expresed in their exponential form
+- <b>Really Huge Numbers:</b> They are expresed in their exponential form
 - <b>Divide by Zero:</b> Displays Infinity. This can be used in futher equations too like <i>Infinity * Infinity = Infinity</i>
 - <b>Equations that do not have a solution:</b> Display an Invalid Expression Message. The next point explains how this works
 - <b>Wrong Syntax of Input:</b> There is a two level filter/sanitization done:
